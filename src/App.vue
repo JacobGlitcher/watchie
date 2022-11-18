@@ -1,6 +1,5 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Todos from '@components/Todos.vue'
 
 export default defineComponent({
   data() {
@@ -8,18 +7,23 @@ export default defineComponent({
     }
   },
   components: {
-    Todos
   },
   methods: {
   },
   computed: {
+    state() {
+      return this.$store.state.count
+    }
   }
+
 })
 </script>
 
 <template>
   <main>
-    <Todos/>
+    <p>Count: {{state}}</p>
+    <button @click="$store.commit('increment')">Increase</button>
+    <button @click="$store.commit('decrement')">Decrease</button>
   </main>
 </template>
 
