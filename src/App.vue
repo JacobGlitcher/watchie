@@ -1,37 +1,23 @@
 <script>
-import { defineComponent } from 'vue'
-
-export default defineComponent({
+export default {
   data() {
-    return {
-    }
+    return {}
   },
-  components: {
-  },
-  methods: {
-  },
-  computed: {
-    state() {
-      return this.$store.state.count
-    }
-  }
-
-})
+  components: {},
+  methods: {},
+  computed: {},
+}
 </script>
 
 <template>
-  <main>
-    <p>Count: {{state}}</p>
-    <button @click="$store.commit('increment')">Increase</button>
-    <button @click="$store.commit('decrement')">Decrease</button>
-  </main>
+  <main></main>
 </template>
 
 <style lang="scss">
-  @import "assets/styles/sass/main";
+@import 'assets/styles/sass/main';
 
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #eaffea;
-  }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #eaffea;
+}
 </style>
