@@ -1,16 +1,26 @@
 <script>
+import { mapGetters, mapMutations, mapActions } from 'vuex'
+
 export default {
   data() {
     return {}
   },
   components: {},
-  methods: {},
-  computed: {},
+  methods: {
+    ...mapMutations('CounterModule', ['SET_COUNT']),
+    ...mapActions('CounterModule', ['increaseCount']),
+  },
+  computed: {
+    ...mapGetters('CounterModule', ['getCounterState']),
+  },
 }
 </script>
 
 <template>
-  <main></main>
+  <main>
+    <p>Count: {{ getCounterState }}</p>
+    <button @click="increaseCount(2)">click me</button>
+  </main>
 </template>
 
 <style lang="scss">
